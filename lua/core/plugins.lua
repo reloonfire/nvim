@@ -46,6 +46,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use "rafamadriz/friendly-snippets"
   use "lewis6991/gitsigns.nvim"
+  use "github/copilot.vim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
