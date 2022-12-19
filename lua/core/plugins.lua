@@ -57,6 +57,13 @@ return require('packer').startup(function(use)
   use "tpope/vim-fugitive"
   use "tpope/vim-rhubarb"
   use "lewis6991/gitsigns.nvim"
+
+  -- Markdown
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
