@@ -15,6 +15,10 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+  }
+  use {
     'nvim-tree/nvim-tree.lua',
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
@@ -22,11 +26,13 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   use 'nvim-lualine/lualine.nvim'
+  -- Fuzzy finder
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
 -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
      run = function()
@@ -45,8 +51,12 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use "rafamadriz/friendly-snippets"
-  use "lewis6991/gitsigns.nvim"
   use "github/copilot.vim"
+
+  -- git
+  use "tpope/vim-fugitive"
+  use "tpope/vim-rhubarb"
+  use "lewis6991/gitsigns.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
